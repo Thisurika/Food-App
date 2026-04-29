@@ -1,56 +1,56 @@
 import { StyleSheet } from "react-native";
 
 const darkTheme = {
-  bg: "#121212",
-  overlay: "rgba(18, 18, 18, 0.85)",
+  bg: "#08100E",
+  overlay: "rgba(8, 16, 14, 0.85)",
   text: "#FFFFFF",
-  textMuted: "#BFBFBF",
-  accent: "#F58A3B",
-  accentStrong: "#F26A1B",
-  accentSoft: "rgba(245, 138, 59, 0.2)",
-  accentTint: "rgba(245, 138, 59, 0.12)",
-  accentFade: "rgba(245, 138, 59, 0.08)",
+  textMuted: "#8E9E99",
+  accent: "#118A6D",
+  accentStrong: "#0E755C",
+  accentSoft: "rgba(17, 138, 109, 0.2)",
+  accentTint: "rgba(17, 138, 109, 0.12)",
+  accentFade: "rgba(17, 138, 109, 0.08)",
   border: "rgba(255, 255, 255, 0.12)",
   borderStrong: "rgba(255, 255, 255, 0.25)",
-  borderAccent: "rgba(245, 138, 59, 0.4)",
+  borderAccent: "rgba(17, 138, 109, 0.4)",
   inputBg: "rgba(255, 255, 255, 0.05)",
   helperBg: "rgba(10, 10, 10, 0.7)",
-  panelBg: "#121212",
+  panelBg: "#121A18",
   panelItemBg: "rgba(255, 255, 255, 0.02)",
   chipBg: "rgba(0, 0, 0, 0.2)",
-  cardBg: "rgba(20, 20, 20, 0.85)",
-  tabsBg: "rgba(20, 20, 20, 0.7)",
-  navBg: "#1B1E23",
-  navActive: "#F58A3B",
-  navBubbleBorder: "#2A2E35",
+  cardBg: "rgba(20, 26, 24, 0.85)",
+  tabsBg: "rgba(20, 26, 24, 0.7)",
+  navBg: "#0B5D49",
+  navActive: "#FFFFFF",
+  navBubbleBorder: "transparent",
   modalOverlay: "rgba(0, 0, 0, 0.6)",
   primaryText: "#FFFFFF"
 };
 
 const lightTheme = {
-  bg: "#FFF6F0",
-  overlay: "rgba(255, 244, 238, 0.9)",
-  text: "#2D201A",
-  textMuted: "#7D5B4A",
-  accent: "#F58A3B",
-  accentStrong: "#F26A1B",
-  accentSoft: "rgba(245, 138, 59, 0.2)",
-  accentTint: "rgba(245, 138, 59, 0.12)",
-  accentFade: "rgba(245, 138, 59, 0.08)",
-  border: "#F3DDCD",
-  borderStrong: "#EBCDBA",
-  borderAccent: "rgba(245, 138, 59, 0.35)",
+  bg: "#F2F6F5",
+  overlay: "rgba(242, 246, 245, 0.9)",
+  text: "#102A22",
+  textMuted: "#627A73",
+  accent: "#0B5D49",
+  accentStrong: "#064D3B",
+  accentSoft: "rgba(11, 93, 73, 0.15)",
+  accentTint: "rgba(11, 93, 73, 0.08)",
+  accentFade: "rgba(11, 93, 73, 0.04)",
+  border: "#E0E8E6",
+  borderStrong: "#C9D6D2",
+  borderAccent: "rgba(11, 93, 73, 0.35)",
   inputBg: "#FFFFFF",
-  helperBg: "#FFE8D8",
+  helperBg: "#E8F0EE",
   panelBg: "#FFFFFF",
   panelItemBg: "#FFFFFF",
   chipBg: "#FFFFFF",
   cardBg: "#FFFFFF",
-  tabsBg: "#FFE8D8",
-  navBg: "#FFFFFF",
-  navActive: "#F58A3B",
-  navBubbleBorder: "#F3DDCD",
-  modalOverlay: "rgba(45, 32, 26, 0.2)",
+  tabsBg: "#E8F0EE",
+  navBg: "#0B5D49",
+  navActive: "#FFFFFF",
+  navBubbleBorder: "transparent",
+  modalOverlay: "rgba(16, 42, 34, 0.2)",
   primaryText: "#FFFFFF"
 };
 
@@ -117,9 +117,9 @@ const createStyles = (theme) => StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: "#F1D9C8",
+    borderColor: "#FFFFFF",
     padding: 12,
-    shadowColor: "#F97316",
+    shadowColor: theme.accent,
     shadowOpacity: 0.08,
     shadowRadius: 8,
     elevation: 3,
@@ -127,7 +127,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   adminDishCardDark: {
     backgroundColor: "rgba(24, 14, 9, 0.92)",
-    borderColor: "rgba(249, 115, 22, 0.25)"
+    borderColor: "rgba(11, 93, 73, 0.25)"
   },
   adminDishRowDark: {
     borderColor: "rgba(255, 255, 255, 0.12)",
@@ -149,9 +149,9 @@ const createStyles = (theme) => StyleSheet.create({
     borderRadius: 12,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#FFE8D6",
+    backgroundColor: "#FFFFFF",
     borderWidth: 1,
-    borderColor: "#FFD7BA"
+    borderColor: "#FFFFFF"
   },
   adminDishInfo: {
     flex: 1
@@ -167,13 +167,13 @@ const createStyles = (theme) => StyleSheet.create({
     borderRadius: 6,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#FFF1E6",
+    backgroundColor: "#FFFFFF",
     borderWidth: 1,
-    borderColor: "#FECBA8"
+    borderColor: "#FFFFFF"
   },
   adminDishIconWrapDark: {
-    backgroundColor: "rgba(249, 115, 22, 0.18)",
-    borderColor: "rgba(249, 115, 22, 0.45)"
+    backgroundColor: "rgba(11, 93, 73, 0.18)",
+    borderColor: "rgba(11, 93, 73, 0.45)"
   },
   adminDishName: {
     fontWeight: "700",
@@ -198,10 +198,10 @@ const createStyles = (theme) => StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 10,
-    backgroundColor: "#F58A3B"
+    backgroundColor: theme.accent
   },
   adminAddButtonDark: {
-    backgroundColor: "#F58A3B"
+    backgroundColor: theme.accent
   },
   adminAddText: {
     color: "#FFFFFF",
@@ -333,8 +333,8 @@ const createStyles = (theme) => StyleSheet.create({
   },
   primaryButton: {
     backgroundColor: theme.accent,
-    paddingVertical: 12,
-    borderRadius: 12,
+    paddingVertical: 14,
+    borderRadius: 999,
     alignItems: "center",
     marginTop: 6
   },
@@ -393,7 +393,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   adminSafeArea: {
     flex: 1,
-    backgroundColor: "#FFF6ED"
+    backgroundColor: "#FFFFFF"
   },
   adminSafeAreaDark: {
     backgroundColor: "#0F0A07"
@@ -406,7 +406,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   adminBackgroundOverlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(255, 245, 238, 0.95)"
+    backgroundColor: theme.bg
   },
   adminBackgroundOverlayDark: {
     backgroundColor: "rgba(12, 8, 6, 0.92)"
@@ -424,12 +424,12 @@ const createStyles = (theme) => StyleSheet.create({
     width: 120,
     backgroundColor: "rgba(20, 12, 8, 0.94)",
     borderRightWidth: 1,
-    borderRightColor: "rgba(249, 115, 22, 0.18)",
+    borderRightColor: "rgba(11, 93, 73, 0.18)",
     paddingHorizontal: 12,
     paddingVertical: 20
   },
   adminBrand: {
-    color: "#F97316",
+    color: theme.accent,
     fontWeight: "700",
     fontSize: 12,
     letterSpacing: 1,
@@ -447,16 +447,16 @@ const createStyles = (theme) => StyleSheet.create({
     paddingVertical: 6,
     paddingHorizontal: 10,
     borderRadius: 12,
-    backgroundColor: "#FFF1E6",
+    backgroundColor: "#FFFFFF",
     borderWidth: 1,
     borderColor: "#FFD2B3"
   },
   adminNavPillActive: {
-    backgroundColor: "#FFE2C7",
-    borderColor: "#F97316"
+    backgroundColor: "#FFFFFF",
+    borderColor: theme.accent
   },
   adminNavText: {
-    color: "#7C2D12",
+    color: theme.textMuted,
     fontWeight: "700",
     fontSize: 11
   },
@@ -467,7 +467,7 @@ const createStyles = (theme) => StyleSheet.create({
     backgroundColor: "transparent"
   },
   adminNavDotActive: {
-    backgroundColor: "#F97316"
+    backgroundColor: theme.accent
   },
   adminScroll: {
     flex: 1
@@ -489,44 +489,40 @@ const createStyles = (theme) => StyleSheet.create({
     paddingVertical: 12,
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: "#FFE2C7",
-    borderTopColor: "#FFF1E6",
-    borderBottomColor: "#FECBA8",
-    borderTopColor: "#FFF1E6",
-    borderBottomColor: "#FECBA8",
+    borderColor: theme.border,
     borderLeftWidth: 4,
-    borderLeftColor: "#F97316",
-    shadowColor: "#F97316",
+    borderLeftColor: theme.accent,
+    shadowColor: theme.accent,
     shadowOpacity: 0.14,
     shadowRadius: 12,
     elevation: 4
   },
   adminTopbarDark: {
     backgroundColor: "rgba(18, 12, 8, 0.94)",
-    borderColor: "rgba(249, 115, 22, 0.22)"
+    borderColor: "rgba(11, 93, 73, 0.22)"
   },
   adminTitle: {
     fontSize: 20,
-    color: "#2B1A0E",
+    color: theme.text,
     fontWeight: "700"
   },
   adminTitleDark: {
-    color: "#FCEFE3"
+    color: "#FFFFFF"
   },
   adminSubtitle: {
-    color: "#9A3412",
+    color: theme.textMuted,
     fontWeight: "600",
     fontSize: 12
   },
   adminSubtitleDark: {
-    color: "#F3B37C"
+    color: theme.textMuted
   },
   adminLink: {
-    color: "#9A3412",
+    color: theme.textMuted,
     fontWeight: "700"
   },
   adminLinkDark: {
-    color: "#FDBA74"
+    color: theme.accent
   },
   adminTopbarActions: {
     flexDirection: "row",
@@ -582,22 +578,22 @@ const createStyles = (theme) => StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 14,
-    backgroundColor: "rgba(255, 247, 240, 0.92)",
+    backgroundColor: "#FFFFFF",
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: "#FFE2C7",
+    borderColor: "#FFFFFF",
     borderLeftWidth: 3,
-    borderLeftColor: "#F97316",
+    borderLeftColor: theme.accent,
     paddingHorizontal: 16,
     paddingVertical: 14,
-    shadowColor: "#F97316",
+    shadowColor: theme.accent,
     shadowOpacity: 0.12,
     shadowRadius: 10,
     elevation: 3
   },
   adminDashQuickItemDark: {
     backgroundColor: "rgba(24, 14, 9, 0.9)",
-    borderColor: "rgba(249, 115, 22, 0.25)"
+    borderColor: "rgba(11, 93, 73, 0.25)"
   },
   adminDashQuickIcon: {
     width: 42,
@@ -623,7 +619,7 @@ const createStyles = (theme) => StyleSheet.create({
     gap: 8,
     paddingLeft: 10,
     borderLeftWidth: 4,
-    borderLeftColor: "#F97316"
+    borderLeftColor: theme.accent
   },
   adminSectionActions: {
     flexDirection: "row",
@@ -634,10 +630,10 @@ const createStyles = (theme) => StyleSheet.create({
   adminSectionTitle: {
     fontSize: 16,
     fontWeight: "700",
-    color: "#7C2D12"
+    color: theme.textMuted
   },
   adminSectionTitleDark: {
-    color: "#FFE6CF"
+    color: "#FFFFFF"
   },
   adminStatsRow: {
     flexDirection: "row",
@@ -658,81 +654,81 @@ const createStyles = (theme) => StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: "#FFE1C6",
-    borderTopColor: "#FFF1E6",
-    borderBottomColor: "#FECBA8",
+    borderColor: "#FFFFFF",
+    borderTopColor: "#FFFFFF",
+    borderBottomColor: "#FFFFFF",
     padding: 12,
     gap: 6,
-    shadowColor: "#F97316",
+    shadowColor: theme.accent,
     shadowOpacity: 0.14,
     shadowRadius: 14,
     elevation: 4
   },
   adminStatCardDark: {
     backgroundColor: "rgba(24, 14, 9, 0.92)",
-    borderColor: "rgba(249, 115, 22, 0.2)"
+    borderColor: "rgba(11, 93, 73, 0.2)"
   },
   adminStatGreen: {
-    backgroundColor: "#E9F5EE",
-    borderColor: "#B7DFC6"
+    backgroundColor: "#FFFFFF",
+    borderColor: "rgba(11, 93, 73, 0.2)"
   },
   adminStatBlue: {
-    backgroundColor: "#E8F1FB",
-    borderColor: "#BFD3F0"
+    backgroundColor: "#FFFFFF",
+    borderColor: "rgba(11, 93, 73, 0.2)"
   },
   adminStatRed: {
-    backgroundColor: "#FDEEEE",
-    borderColor: "#F2C7C7"
+    backgroundColor: "#FFFFFF",
+    borderColor: "rgba(11, 93, 73, 0.2)"
   },
   adminStatOrange: {
-    backgroundColor: "#FFF3E6",
-    borderColor: "#F0D3B7"
+    backgroundColor: "#FFFFFF",
+    borderColor: "rgba(11, 93, 73, 0.2)"
   },
   adminStatGreenDark: {
-    backgroundColor: "rgba(16, 58, 37, 0.6)",
-    borderColor: "rgba(34, 197, 94, 0.35)"
+    backgroundColor: "rgba(8, 16, 14, 0.8)",
+    borderColor: "rgba(17, 138, 109, 0.35)"
   },
   adminStatBlueDark: {
-    backgroundColor: "rgba(15, 42, 74, 0.6)",
-    borderColor: "rgba(59, 130, 246, 0.35)"
+    backgroundColor: "rgba(8, 16, 14, 0.8)",
+    borderColor: "rgba(17, 138, 109, 0.35)"
   },
   adminStatRedDark: {
-    backgroundColor: "rgba(82, 20, 20, 0.6)",
-    borderColor: "rgba(239, 68, 68, 0.35)"
+    backgroundColor: "rgba(8, 16, 14, 0.8)",
+    borderColor: "rgba(17, 138, 109, 0.35)"
   },
   adminStatOrangeDark: {
-    backgroundColor: "rgba(86, 46, 12, 0.6)",
-    borderColor: "rgba(249, 115, 22, 0.35)"
+    backgroundColor: "rgba(8, 16, 14, 0.8)",
+    borderColor: "rgba(17, 138, 109, 0.35)"
   },
   adminStatLabel: {
-    color: "#8A5B3C",
+    color: theme.textMuted,
     fontSize: 12
   },
   adminStatLabelDark: {
-    color: "#E9C9AE"
+    color: theme.textMuted
   },
   adminStatValue: {
-    color: "#2B1A0E",
+    color: theme.text,
     fontWeight: "700",
     fontSize: 18
   },
   adminStatValueDark: {
-    color: "#FFF6ED"
+    color: "#FFFFFF"
   },
   adminMutedText: {
-    color: "#9A6B4F",
+    color: theme.textMuted,
     fontSize: 12
   },
   adminMutedTextDark: {
-    color: "#D6B79F"
+    color: theme.textMuted
   },
   adminPanel: {
     backgroundColor: "#FFFFFF",
     borderRadius: 18,
     padding: 18,
     borderWidth: 1,
-    borderColor: "#FFE2C7",
-    shadowColor: "#F97316",
+    borderColor: "#FFFFFF",
+    shadowColor: theme.accent,
     shadowOpacity: 0.1,
     shadowRadius: 12,
     elevation: 4,
@@ -740,7 +736,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   adminPanelDark: {
     backgroundColor: "rgba(24, 14, 9, 0.92)",
-    borderColor: "rgba(249, 115, 22, 0.2)"
+    borderColor: "rgba(11, 93, 73, 0.2)"
   },
   adminOrderSummary: {
     flexDirection: "row",
@@ -750,14 +746,14 @@ const createStyles = (theme) => StyleSheet.create({
     paddingHorizontal: 12,
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: "#FFD7BA",
-    borderTopColor: "#FFF1E6",
-    borderBottomColor: "#FECBA8",
-    backgroundColor: "#FFF3E8"
+    borderColor: "#FFFFFF",
+    borderTopColor: "#FFFFFF",
+    borderBottomColor: "#FFFFFF",
+    backgroundColor: "#FFFFFF"
   },
   adminOrderSummaryDark: {
-    backgroundColor: "rgba(249, 115, 22, 0.12)",
-    borderColor: "rgba(249, 115, 22, 0.28)"
+    backgroundColor: "rgba(11, 93, 73, 0.12)",
+    borderColor: "rgba(11, 93, 73, 0.28)"
   },
   adminOrderSummaryItem: {
     flex: 1,
@@ -775,7 +771,7 @@ const createStyles = (theme) => StyleSheet.create({
   adminOrderSummaryLabel: {
     fontSize: 12,
     letterSpacing: 0.4,
-    color: "#9A6B4F"
+    color: theme.textMuted
   },
   adminOrderSummaryLabelDark: {
     color: "#E7C7AD"
@@ -783,10 +779,10 @@ const createStyles = (theme) => StyleSheet.create({
   adminOrderSummaryValue: {
     fontSize: 16,
     fontWeight: "700",
-    color: "#2B1A0E"
+    color: theme.text
   },
   adminOrderSummaryValueDark: {
-    color: "#FFE6CF"
+    color: "#FFFFFF"
   },
   adminProfileHero: {
     alignItems: "center",
@@ -798,14 +794,14 @@ const createStyles = (theme) => StyleSheet.create({
     height: 72,
     borderRadius: 36,
     borderWidth: 1,
-    borderColor: "#F97316",
+    borderColor: theme.accent,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#FFF1E6"
+    backgroundColor: "#FFFFFF"
   },
   adminProfileIconDark: {
-    borderColor: "rgba(249, 115, 22, 0.7)",
-    backgroundColor: "rgba(249, 115, 22, 0.16)"
+    borderColor: "rgba(11, 93, 73, 0.7)",
+    backgroundColor: "rgba(11, 93, 73, 0.16)"
   },
   adminProfileIconText: {
     color: "#C2410C",
@@ -813,18 +809,18 @@ const createStyles = (theme) => StyleSheet.create({
     fontSize: 20
   },
   adminProfileIconTextDark: {
-    color: "#FDBA74"
+    color: theme.accent
   },
   adminProfileName: {
-    color: "#2B1A0E",
+    color: theme.text,
     fontWeight: "700",
     fontSize: 16
   },
   adminProfileNameDark: {
-    color: "#FFE6CF"
+    color: "#FFFFFF"
   },
   adminProfileMeta: {
-    color: "#9A6B4F",
+    color: theme.textMuted,
     fontSize: 12
   },
   adminProfileMetaDark: {
@@ -837,7 +833,7 @@ const createStyles = (theme) => StyleSheet.create({
     paddingVertical: 6
   },
   adminProfileKey: {
-    color: "#9A6B4F",
+    color: theme.textMuted,
     fontSize: 12,
     fontWeight: "700"
   },
@@ -845,22 +841,22 @@ const createStyles = (theme) => StyleSheet.create({
     color: "#E7C7AD"
   },
   adminProfileValue: {
-    color: "#2B1A0E",
+    color: theme.text,
     fontSize: 12,
     fontWeight: "600"
   },
   adminProfileValueDark: {
-    color: "#FFE6CF"
+    color: "#FFFFFF"
   },
   adminCard: {
     backgroundColor: "#FFFFFF",
     borderRadius: 16,
     padding: 16,
     borderWidth: 1,
-    borderColor: "#FFE2C7",
-    borderTopColor: "#FFF1E6",
-    borderBottomColor: "#FECBA8",
-    shadowColor: "#F97316",
+    borderColor: "#FFFFFF",
+    borderTopColor: "#FFFFFF",
+    borderBottomColor: "#FFFFFF",
+    shadowColor: theme.accent,
     shadowOpacity: 0.1,
     shadowRadius: 10,
     elevation: 4,
@@ -868,7 +864,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   adminCardDark: {
     backgroundColor: "rgba(24, 14, 9, 0.92)",
-    borderColor: "rgba(249, 115, 22, 0.2)"
+    borderColor: "rgba(11, 93, 73, 0.2)"
   },
   adminCardHeader: {
     flexDirection: "row",
@@ -876,14 +872,14 @@ const createStyles = (theme) => StyleSheet.create({
     alignItems: "center"
   },
   adminCardTitle: {
-    color: "#2B1A0E",
+    color: theme.text,
     fontWeight: "700"
   },
   adminCardTitleDark: {
-    color: "#FFE6CF"
+    color: "#FFFFFF"
   },
   adminCardMeta: {
-    color: "#8A5B3C",
+    color: theme.textMuted,
     fontSize: 12
   },
   adminCardMetaDark: {
@@ -900,43 +896,43 @@ const createStyles = (theme) => StyleSheet.create({
     paddingVertical: 6,
     paddingHorizontal: 12,
     borderRadius: 999,
-    backgroundColor: "rgba(255, 247, 240, 0.9)",
+    backgroundColor: "#FFFFFF",
     borderWidth: 1,
-    borderColor: "#FFD7BA"
+    borderColor: "#FFFFFF"
   },
   adminOptionChipActive: {
-    backgroundColor: "#FFE2C7",
-    borderColor: "#F97316"
+    backgroundColor: "#FFFFFF",
+    borderColor: theme.accent
   },
   adminOptionChipDark: {
-    backgroundColor: "rgba(249, 115, 22, 0.12)",
-    borderColor: "rgba(249, 115, 22, 0.3)"
+    backgroundColor: "rgba(11, 93, 73, 0.12)",
+    borderColor: "rgba(11, 93, 73, 0.3)"
   },
   adminOptionChipActiveDark: {
-    backgroundColor: "rgba(249, 115, 22, 0.3)",
-    borderColor: "rgba(249, 115, 22, 0.85)"
+    backgroundColor: "rgba(11, 93, 73, 0.3)",
+    borderColor: "rgba(11, 93, 73, 0.85)"
   },
   adminOptionText: {
-    color: "#9A3412",
+    color: theme.textMuted,
     fontWeight: "700",
     fontSize: 12
   },
   adminOptionTextActive: {
-    color: "#2B1A0E"
+    color: theme.text
   },
   adminOptionTextDark: {
     color: "#FADFC6"
   },
   adminOptionTextActiveDark: {
-    color: "#FFE6CF"
+    color: "#FFFFFF"
   },
   adminStatusText: {
-    color: "#9A3412",
+    color: theme.textMuted,
     fontWeight: "700",
     fontSize: 12
   },
   adminStatusTextDark: {
-    color: "#FDBA74"
+    color: theme.accent
   },
   adminActionRow: {
     flexDirection: "row",
@@ -949,24 +945,24 @@ const createStyles = (theme) => StyleSheet.create({
     paddingVertical: 6,
     paddingHorizontal: 12,
     borderRadius: 10,
-    backgroundColor: "#FFF1E6",
+    backgroundColor: "#FFFFFF",
     borderWidth: 1,
-    borderColor: "#FECBA8"
+    borderColor: "#FFFFFF"
   },
   adminActionButtonDark: {
-    backgroundColor: "rgba(249, 115, 22, 0.16)",
-    borderColor: "rgba(249, 115, 22, 0.45)"
+    backgroundColor: "rgba(11, 93, 73, 0.16)",
+    borderColor: "rgba(11, 93, 73, 0.45)"
   },
   adminActionText: {
-    color: "#9A3412",
+    color: theme.textMuted,
     fontWeight: "700",
     fontSize: 12
   },
   adminActionTextDark: {
-    color: "#FDBA74"
+    color: theme.accent
   },
   adminPrimaryButton: {
-    backgroundColor: "#F97316",
+    backgroundColor: theme.accent,
     paddingVertical: 10,
     paddingHorizontal: 16,
     borderRadius: 12,
@@ -985,23 +981,23 @@ const createStyles = (theme) => StyleSheet.create({
   },
   adminGhostButton: {
     borderWidth: 1,
-    borderColor: "#FDBA74",
+    borderColor: theme.accent,
     paddingVertical: 8,
     paddingHorizontal: 12,
     borderRadius: 10,
-    backgroundColor: "#FFF1E6"
+    backgroundColor: "#FFFFFF"
   },
   adminGhostButtonDark: {
-    borderColor: "rgba(249, 115, 22, 0.45)",
-    backgroundColor: "rgba(249, 115, 22, 0.16)"
+    borderColor: "rgba(11, 93, 73, 0.45)",
+    backgroundColor: "rgba(11, 93, 73, 0.16)"
   },
   adminGhostText: {
-    color: "#9A3412",
+    color: theme.textMuted,
     fontWeight: "700",
     fontSize: 12
   },
   adminGhostTextDark: {
-    color: "#FDBA74"
+    color: theme.accent
   },
   adminDangerButton: {
     paddingVertical: 6,
@@ -1021,7 +1017,7 @@ const createStyles = (theme) => StyleSheet.create({
     color: "#FEE2E2"
   },
   adminFieldLabel: {
-    color: "#9A6B4F",
+    color: theme.textMuted,
     fontWeight: "600",
     fontSize: 12,
     marginTop: 4
@@ -1031,46 +1027,46 @@ const createStyles = (theme) => StyleSheet.create({
   },
   adminInput: {
     borderWidth: 1,
-    borderColor: "#FFD7BA",
+    borderColor: "#FFFFFF",
     borderRadius: 10,
     padding: 12,
     marginBottom: 10,
     backgroundColor: "#FFFFFF",
-    color: "#2B1A0E"
+    color: theme.text
   },
   adminInputDark: {
-    borderColor: "rgba(249, 115, 22, 0.28)",
+    borderColor: "rgba(11, 93, 73, 0.28)",
     backgroundColor: "rgba(24, 14, 9, 0.9)",
-    color: "#FFE6CF"
+    color: "#FFFFFF"
   },
   adminDropdown: {
     borderWidth: 1,
-    borderColor: "#FFD7BA",
+    borderColor: "#FFFFFF",
     borderRadius: 10,
     padding: 12,
     marginBottom: 10,
     backgroundColor: "#FFFFFF"
   },
   adminDropdownDark: {
-    borderColor: "rgba(249, 115, 22, 0.28)",
+    borderColor: "rgba(11, 93, 73, 0.28)",
     backgroundColor: "rgba(24, 14, 9, 0.9)"
   },
   adminDropdownText: {
-    color: "#2B1A0E",
+    color: theme.text,
     fontWeight: "600"
   },
   adminDropdownTextDark: {
-    color: "#FFE6CF"
+    color: "#FFFFFF"
   },
   adminDropdownMenu: {
     borderWidth: 1,
-    borderColor: "#FFD7BA",
+    borderColor: "#FFFFFF",
     borderRadius: 10,
     marginBottom: 12,
     backgroundColor: "#FFFFFF"
   },
   adminDropdownMenuDark: {
-    borderColor: "rgba(249, 115, 22, 0.28)",
+    borderColor: "rgba(11, 93, 73, 0.28)",
     backgroundColor: "rgba(24, 14, 9, 0.95)"
   },
   adminDropdownItem: {
@@ -1080,42 +1076,42 @@ const createStyles = (theme) => StyleSheet.create({
     borderBottomColor: "rgba(0, 0, 0, 0.06)"
   },
   adminDropdownItemText: {
-    color: "#2B1A0E",
+    color: theme.text,
     fontWeight: "600"
   },
   adminDropdownItemTextDark: {
-    color: "#FFE6CF"
+    color: "#FFFFFF"
   },
   adminPill: {
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 999,
     borderWidth: 1,
-    borderColor: "#FDBA74",
-    backgroundColor: "#FFF1E6",
+    borderColor: theme.accent,
+    backgroundColor: "#FFFFFF",
     flexGrow: 0,
     minWidth: 0,
     alignItems: "center"
   },
   adminPillDark: {
-    borderColor: "rgba(249, 115, 22, 0.45)",
-    backgroundColor: "rgba(249, 115, 22, 0.16)"
+    borderColor: "rgba(11, 93, 73, 0.45)",
+    backgroundColor: "rgba(11, 93, 73, 0.16)"
   },
   adminPillActive: {
-    borderColor: "#F97316",
-    backgroundColor: "#FFE2C7"
+    borderColor: theme.accent,
+    backgroundColor: "#FFFFFF"
   },
   adminPillActiveDark: {
-    borderColor: "rgba(249, 115, 22, 0.9)",
-    backgroundColor: "rgba(249, 115, 22, 0.32)"
+    borderColor: "rgba(11, 93, 73, 0.9)",
+    backgroundColor: "rgba(11, 93, 73, 0.32)"
   },
   adminPillText: {
-    color: "#9A3412",
+    color: theme.textMuted,
     fontWeight: "700",
     fontSize: 10
   },
   adminPillTextDark: {
-    color: "#FDBA74"
+    color: theme.accent
   },
   adminModalSheet: {
     backgroundColor: "#FFF7F0",
@@ -1124,11 +1120,11 @@ const createStyles = (theme) => StyleSheet.create({
     maxHeight: "92%",
     paddingBottom: 24,
     borderWidth: 1,
-    borderColor: "#FFE2C7"
+    borderColor: "#FFFFFF"
   },
   adminModalSheetDark: {
     backgroundColor: "#130B07",
-    borderColor: "rgba(249, 115, 22, 0.28)"
+    borderColor: "rgba(11, 93, 73, 0.28)"
   },
   adminModalHeader: {
     flexDirection: "row",
@@ -1137,25 +1133,25 @@ const createStyles = (theme) => StyleSheet.create({
     paddingHorizontal: 18,
     paddingVertical: 14,
     borderBottomWidth: 1,
-    borderBottomColor: "#FFE2C7"
+    borderBottomColor: "#FFFFFF"
   },
   adminModalHeaderDark: {
-    borderBottomColor: "rgba(249, 115, 22, 0.2)"
+    borderBottomColor: "rgba(11, 93, 73, 0.2)"
   },
   adminModalTitle: {
-    color: "#2B1A0E",
+    color: theme.text,
     fontWeight: "700",
     fontSize: 16
   },
   adminModalTitleDark: {
-    color: "#FFE6CF"
+    color: "#FFFFFF"
   },
   adminModalClose: {
-    color: "#9A3412",
+    color: theme.textMuted,
     fontWeight: "700"
   },
   adminModalCloseDark: {
-    color: "#FDBA74"
+    color: theme.accent
   },
   adminModalContent: {
     padding: 20
@@ -1167,10 +1163,10 @@ const createStyles = (theme) => StyleSheet.create({
     backgroundColor: "#FFF7F0",
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: "#FFD7BA",
+    borderColor: "#FFFFFF",
     padding: 14,
     marginBottom: 12,
-    shadowColor: "#F97316",
+    shadowColor: theme.accent,
     shadowOpacity: 0.08,
     shadowRadius: 8,
     elevation: 3,
@@ -1178,7 +1174,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   adminSeatCardDark: {
     backgroundColor: "rgba(24, 14, 9, 0.92)",
-    borderColor: "rgba(249, 115, 22, 0.2)"
+    borderColor: "rgba(11, 93, 73, 0.2)"
   },
   adminSeatHeader: {
     flexDirection: "row",
@@ -1186,11 +1182,11 @@ const createStyles = (theme) => StyleSheet.create({
     alignItems: "center"
   },
   adminSeatTitle: {
-    color: "#2B1A0E",
+    color: theme.text,
     fontWeight: "700"
   },
   adminSeatTitleDark: {
-    color: "#FFE6CF"
+    color: "#FFFFFF"
   },
   adminSeatBadge: {
     paddingHorizontal: 10,
@@ -1212,7 +1208,7 @@ const createStyles = (theme) => StyleSheet.create({
     color: "#0A0A0A"
   },
   adminSeatMeta: {
-    color: "#8A5B3C",
+    color: theme.textMuted,
     fontSize: 12
   },
   adminSeatMetaDark: {
@@ -1222,9 +1218,9 @@ const createStyles = (theme) => StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: "#FFE2C7",
-    borderTopColor: "#FFF1E6",
-    borderBottomColor: "#FECBA8",
+    borderColor: "#FFFFFF",
+    borderTopColor: "#FFFFFF",
+    borderBottomColor: "#FFFFFF",
     paddingVertical: 8,
     paddingHorizontal: 10,
     marginHorizontal: 12,
@@ -1236,7 +1232,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   adminBottomNavDark: {
     backgroundColor: "#1B120B",
-    borderColor: "rgba(249, 115, 22, 0.3)"
+    borderColor: "rgba(11, 93, 73, 0.3)"
   },
   adminNavScroll: {
     gap: 6,
@@ -1256,10 +1252,10 @@ const createStyles = (theme) => StyleSheet.create({
     minWidth: 40
   },
   adminNavItemActive: {
-    backgroundColor: "rgba(249, 115, 22, 0.12)"
+    backgroundColor: "rgba(11, 93, 73, 0.12)"
   },
   adminNavItemActiveDark: {
-    backgroundColor: "rgba(249, 115, 22, 0.2)"
+    backgroundColor: "rgba(11, 93, 73, 0.2)"
   },
   adminNavIconWrap: {
     width: 36,
@@ -1270,8 +1266,8 @@ const createStyles = (theme) => StyleSheet.create({
     backgroundColor: "transparent"
   },
   adminNavIconWrapActive: {
-    backgroundColor: "#F97316",
-    shadowColor: "#F97316",
+    backgroundColor: theme.accent,
+    shadowColor: theme.accent,
     shadowOpacity: 0.35,
     shadowRadius: 6,
     elevation: 4
@@ -1280,23 +1276,23 @@ const createStyles = (theme) => StyleSheet.create({
     width: 3,
     height: 3,
     borderRadius: 1.5,
-    backgroundColor: "#F97316",
+    backgroundColor: theme.accent,
     marginTop: 0
   },
   adminNavText: {
-    color: "#7C2D12",
+    color: theme.textMuted,
     fontWeight: "600",
     fontSize: 9,
     textAlign: "center"
   },
   adminNavTextActive: {
-    color: "#F97316"
+    color: theme.accent
   },
   adminNavTextDark: {
     color: "#FADFC6"
   },
   adminNavTextActiveDark: {
-    color: "#FDBA74"
+    color: theme.accent
   },
   compactBottomNav: {
     position: "absolute",
@@ -1333,8 +1329,8 @@ const createStyles = (theme) => StyleSheet.create({
     borderColor: "rgba(255, 255, 255, 0.08)"
   },
   compactNavPillActive: {
-    backgroundColor: "rgba(245, 138, 59, 0.24)",
-    borderColor: "rgba(245, 138, 59, 0.65)"
+    backgroundColor: "rgba(11, 93, 73, 0.24)",
+    borderColor: "rgba(11, 93, 73, 0.65)"
   },
   compactNavText: {
     color: "#F5F5F5",
@@ -1348,7 +1344,7 @@ const createStyles = (theme) => StyleSheet.create({
     backgroundColor: "transparent"
   },
   compactNavDotActive: {
-    backgroundColor: "#F58A3B"
+    backgroundColor: theme.accent
   },
   adminContainer: {
     paddingHorizontal: 24,
@@ -1372,9 +1368,9 @@ const createStyles = (theme) => StyleSheet.create({
     justifyContent: "space-between"
   },
   adminTabActive: {
-    borderColor: "#F58A3B",
-    backgroundColor: "rgba(245, 138, 59, 0.18)",
-    shadowColor: "#F58A3B",
+    borderColor: theme.accent,
+    backgroundColor: "rgba(11, 93, 73, 0.18)",
+    shadowColor: theme.accent,
     shadowOpacity: 0.15,
     shadowRadius: 8
   },
@@ -1434,16 +1430,16 @@ const createStyles = (theme) => StyleSheet.create({
     backgroundColor: "#FFF8EE"
   },
   adminChipDark: {
-    borderColor: "rgba(245, 138, 59, 0.35)",
-    backgroundColor: "rgba(245, 138, 59, 0.12)"
+    borderColor: "rgba(11, 93, 73, 0.35)",
+    backgroundColor: "rgba(11, 93, 73, 0.12)"
   },
   adminChipActive: {
-    borderColor: "#F26A1B",
+    borderColor: theme.accentStrong,
     backgroundColor: "#E7CFA7"
   },
   adminChipActiveDark: {
-    borderColor: "rgba(245, 138, 59, 0.8)",
-    backgroundColor: "rgba(245, 138, 59, 0.28)"
+    borderColor: "rgba(11, 93, 73, 0.8)",
+    backgroundColor: "rgba(11, 93, 73, 0.28)"
   },
   adminChipText: {
     color: "#6B4B1E",
@@ -1474,8 +1470,8 @@ const createStyles = (theme) => StyleSheet.create({
     fontWeight: "700"
   },
   staffBadge: {
-    backgroundColor: "rgba(245, 138, 59, 0.25)",
-    color: "#F58A3B",
+    backgroundColor: "rgba(11, 93, 73, 0.25)",
+    color: theme.accent,
     fontWeight: "700",
     paddingHorizontal: 12,
     paddingVertical: 6,
@@ -1569,13 +1565,13 @@ const createStyles = (theme) => StyleSheet.create({
     left: 0,
     right: 0,
     zIndex: 20,
-    backgroundColor: "rgba(255, 246, 240, 0.98)",
+    backgroundColor: "#FFFFFF",
     borderBottomWidth: 1,
-    borderBottomColor: "rgba(245, 138, 59, 0.25)"
+    borderBottomColor: "rgba(11, 93, 73, 0.25)"
   },
   topbarFixedDark: {
     backgroundColor: "rgba(18, 18, 18, 0.96)",
-    borderBottomColor: "rgba(245, 138, 59, 0.25)"
+    borderBottomColor: "rgba(11, 93, 73, 0.25)"
   },
   topbarSpacer: {
     height: 62
@@ -1593,17 +1589,17 @@ const createStyles = (theme) => StyleSheet.create({
   },
   cartIconButton: {
     borderWidth: 1,
-    borderColor: "rgba(245, 138, 59, 0.6)",
+    borderColor: "rgba(11, 93, 73, 0.6)",
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 999,
-    backgroundColor: "rgba(245, 138, 59, 0.12)",
+    backgroundColor: "rgba(11, 93, 73, 0.12)",
     flexDirection: "row",
     alignItems: "center",
     gap: 6
   },
   cartIconText: {
-    color: "#F58A3B",
+    color: theme.accent,
     fontWeight: "700",
     fontSize: 12
   },
@@ -1623,14 +1619,14 @@ const createStyles = (theme) => StyleSheet.create({
   },
   menuButton: {
     borderWidth: 1,
-    borderColor: "rgba(245, 138, 59, 0.6)",
+    borderColor: "rgba(11, 93, 73, 0.6)",
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 999,
-    backgroundColor: "rgba(245, 138, 59, 0.12)"
+    backgroundColor: "rgba(11, 93, 73, 0.12)"
   },
   menuButtonText: {
-    color: "#F58A3B",
+    color: theme.accent,
     fontWeight: "700",
     fontSize: 12
   },
@@ -1695,7 +1691,7 @@ const createStyles = (theme) => StyleSheet.create({
     alignItems: "center"
   },
   profileTabButtonActive: {
-    backgroundColor: "rgba(245, 138, 59, 0.25)"
+    backgroundColor: "rgba(11, 93, 73, 0.25)"
   },
   profileTabText: {
     color: theme.textMuted,
@@ -1733,7 +1729,7 @@ const createStyles = (theme) => StyleSheet.create({
     marginBottom: 8
   },
   link: {
-    color: "#F58A3B",
+    color: theme.accent,
     fontWeight: "600"
   },
   catalogList: {
@@ -1749,59 +1745,43 @@ const createStyles = (theme) => StyleSheet.create({
   },
   bottomNavWrap: {
     position: "absolute",
-    left: 16,
-    right: 16,
-    bottom: 14,
+    left: 20,
+    right: 20,
+    bottom: 24,
     alignItems: "center"
   },
   bottomNav: {
     width: "100%",
     backgroundColor: theme.navBg,
-    borderRadius: 24,
-    borderWidth: 1,
-    borderColor: theme.border,
-    paddingVertical: 10,
-    paddingHorizontal: 18,
+    borderRadius: 999,
+    paddingVertical: 14,
+    paddingHorizontal: 20,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "flex-end",
+    alignItems: "center",
     shadowColor: "#000000",
-    shadowOpacity: 0.35,
-    shadowRadius: 18,
-    elevation: 8
+    shadowOpacity: 0.25,
+    shadowRadius: 20,
+    elevation: 10
   },
   bottomNavItem: {
-    flex: 1,
+    padding: 8,
     alignItems: "center",
-    gap: 4
+    justifyContent: "center"
   },
-  bottomNavItemCenter: {
-    flex: 1,
+  bottomNavItemActive: {
+    flexDirection: "row",
     alignItems: "center",
-    gap: 6,
-    marginTop: -24
-  },
-  bottomNavCenterBubble: {
-    width: 46,
-    height: 46,
-    borderRadius: 23,
     backgroundColor: theme.navActive,
-    alignItems: "center",
-    justifyContent: "center",
-    borderWidth: 4,
-    borderColor: theme.navBubbleBorder
-  },
-  bottomNavCenterBubbleActive: {
-    backgroundColor: "#6C5CE7"
-  },
-  bottomNavText: {
-    color: theme.textMuted,
-    fontWeight: "600",
-    fontSize: 10,
-    textAlign: "center"
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 999,
+    gap: 6
   },
   bottomNavTextActive: {
-    color: theme.navActive
+    color: theme.navBg,
+    fontWeight: "700",
+    fontSize: 13
   },
   heroSidebarToggle: {
     alignSelf: "center",
@@ -1927,8 +1907,8 @@ const createStyles = (theme) => StyleSheet.create({
     backgroundColor: theme.panelItemBg
   },
   drawerItemActive: {
-    borderColor: "#F58A3B",
-    backgroundColor: "rgba(245, 138, 59, 0.2)"
+    borderColor: theme.accent,
+    backgroundColor: "rgba(11, 93, 73, 0.2)"
   },
   drawerItemDanger: {
     borderColor: "rgba(239, 68, 68, 0.5)"
@@ -1964,12 +1944,15 @@ const createStyles = (theme) => StyleSheet.create({
   },
   filterChipActive: {
     borderColor: theme.accent,
-    backgroundColor: theme.accentSoft
+    backgroundColor: theme.accent
   },
   filterChipText: {
     color: theme.textMuted,
     fontWeight: "700",
-    fontSize: 11
+    fontSize: 12
+  },
+  filterChipTextActive: {
+    color: theme.primaryText
   },
   sectionTitle: {
     fontSize: 16,
@@ -2111,15 +2094,21 @@ const createStyles = (theme) => StyleSheet.create({
     backgroundColor: "rgba(239, 68, 68, 0.2)"
   },
   seatMapBadgeText: {
-    color: "#2B1A0E",
+    color: theme.text,
     fontWeight: "700",
     fontSize: 11
   },
   menuCard: {
-    backgroundColor: "#FFFFFF",
-    borderRadius: 14,
+    backgroundColor: theme.cardBg,
+    borderRadius: 24,
     overflow: "hidden",
-    marginBottom: 12
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: theme.border,
+    shadowColor: "#000000",
+    shadowOpacity: 0.05,
+    shadowRadius: 10,
+    elevation: 3
   },
   cardImage: {
     width: "100%",

@@ -1032,23 +1032,28 @@ export default function App() {
       <View style={styles.bottomNav}>
         {[
           { key: "menu", label: "Home", icon: "home-outline", activeIcon: "home" },
-          { key: "orders", label: "My Orders", icon: "receipt-outline", activeIcon: "receipt" },
-          { key: "tables", label: "Seat Map", icon: "grid-outline", activeIcon: "grid", isCenter: true },
-          { key: "profile", label: "My Profile", icon: "person-outline", activeIcon: "person" }
+          { key: "orders", label: "Orders", icon: "receipt-outline", activeIcon: "receipt" },
+          { key: "tables", label: "Tables", icon: "grid-outline", activeIcon: "grid" },
+          { key: "profile", label: "Profile", icon: "person-outline", activeIcon: "person" }
         ].map((item) => {
           const isActive = customerTab === item.key;
           const iconName = isActive ? item.activeIcon : item.icon;
-          const itemStyle = item.isCenter ? styles.bottomNavItemCenter : styles.bottomNavItem;
           return (
             <TouchableOpacity
               key={item.key}
-              style={itemStyle}
+              style={isActive ? styles.bottomNavItemActive : styles.bottomNavItem}
               onPress={() => setCustomerTab(item.key)}
             >
-              <Ionicons name={iconName} size={18} color={isActive ? "#6C5CE7" : "#A7B0BE"} />
-              <Text style={[styles.bottomNavText, isActive && styles.bottomNavTextActive]}>
-                {item.label}
-              </Text>
+              <Ionicons 
+                name={iconName} 
+                size={22} 
+                color={isActive ? styles.bottomNavTextActive.color : "rgba(255,255,255,0.6)"} 
+              />
+              {isActive && (
+                <Text style={styles.bottomNavTextActive}>
+                  {item.label}
+                </Text>
+              )}
             </TouchableOpacity>
           );
         })}
@@ -2062,10 +2067,13 @@ export default function App() {
   if (initializing || (token && !roleReady)) {
     return (
       <SafeAreaProvider>
-        <SafeAreaView style={styles.safeArea}>
-          <View style={styles.centered}>
-            <ActivityIndicator size="large" color={theme.accent} />
-            <Text style={styles.helperText}>Loading...</Text>
+        <SafeAreaView style={[styles.safeArea, { backgroundColor: "#0B5D49" }]}>
+          <View style={[styles.centered, { backgroundColor: "#0B5D49" }]}>
+            <Image 
+              source={{ uri: "https://foodcultureireland.ie/wp-content/themes/starter_theme/assets/images/food-loader.gif" }} 
+              style={{ width: 150, height: 150 }} 
+              resizeMode="contain"
+            />
           </View>
         </SafeAreaView>
       </SafeAreaProvider>
@@ -2169,7 +2177,7 @@ export default function App() {
           ) : null}
           <ScrollView contentContainerStyle={[styles.staffContainer, styles.bottomNavSpace]}>
             <View style={styles.staffHeader}>
-              <Text style={styles.brand}>THE GOLDEN FORK</Text>
+              <Text style={styles.brand}>GOFOOD</Text>
               <TouchableOpacity onPress={handleLogout}>
                 <Text style={styles.link}>Logout</Text>
               </TouchableOpacity>
@@ -3290,7 +3298,7 @@ export default function App() {
                 <Ionicons name="shield-checkmark" size={22} color="#F97316" />
               </View>
               <View>
-                <Text style={[styles.adminTitle, isAdminDark && styles.adminTitleDark]}>Golden Fork</Text>
+                <Text style={[styles.adminTitle, isAdminDark && styles.adminTitleDark]}>GoFood</Text>
                 <Text style={[styles.adminSubtitle, isAdminDark && styles.adminSubtitleDark]}>
                   {profile?.firstname ? `Hi, ${profile.firstname}` : profile?.email || "Admin"}
                 </Text>
@@ -3324,10 +3332,10 @@ export default function App() {
                 </Text>
                 <View style={styles.adminStatsRow}>
                   {[
-                    { label: "Revenue", value: `LKR ${adminRevenue.toFixed(2)}`, icon: "cash-outline", color: "#00B894" },
-                    { label: "Active Orders", value: adminPendingCount, icon: "flame-outline", color: "#FDCB6E" },
-                    { label: "Free Tables", value: adminAvailableTablesCount, icon: "checkmark-circle-outline", color: "#F97316" },
-                    { label: "Total Orders", value: adminOrders.length, icon: "receipt-outline", color: "#74B9FF" }
+                    { label: "Revenue", value: `LKR ${adminRevenue.toFixed(2)}`, icon: "cash-outline", color: theme.accent },
+                    { label: "Active Orders", value: adminPendingCount, icon: "flame-outline", color: theme.accent },
+                    { label: "Free Tables", value: adminAvailableTablesCount, icon: "checkmark-circle-outline", color: theme.accent },
+                    { label: "Total Orders", value: adminOrders.length, icon: "receipt-outline", color: theme.accent }
                   ].map((item, index) => {
                     const palette = [
                       { light: styles.adminStatGreen, dark: styles.adminStatGreenDark },
@@ -3357,12 +3365,12 @@ export default function App() {
 
                 <View style={[styles.adminDashQuickGrid]}>
                   {[
-                    { label: "Tables", icon: "grid", tab: "tables", color: "#F97316" },
-                    { label: "Orders", icon: "receipt", tab: "orders", color: "#FDCB6E" },
-                    { label: "Payments", icon: "card", tab: "payments", color: "#00B894" },
-                    { label: "Dishes", icon: "restaurant", tab: "dishes", color: "#E17055" },
-                    { label: "Users", icon: "people", tab: "users", color: "#74B9FF" },
-                    { label: "Reviews", icon: "chatbubbles", tab: "reviews", color: "#FDBA74" }
+                    { label: "Tables", icon: "grid", tab: "tables", color: theme.accent },
+                    { label: "Orders", icon: "receipt", tab: "orders", color: theme.accent },
+                    { label: "Payments", icon: "card", tab: "payments", color: theme.accent },
+                    { label: "Dishes", icon: "restaurant", tab: "dishes", color: theme.accent },
+                    { label: "Users", icon: "people", tab: "users", color: theme.accent },
+                    { label: "Reviews", icon: "chatbubbles", tab: "reviews", color: theme.accent }
                   ].map((q) => (
                     <TouchableOpacity
                       key={q.tab}

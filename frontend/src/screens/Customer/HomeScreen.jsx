@@ -89,7 +89,7 @@ export default function HomeScreen({
                 ]}
                 onPress={() => setMenuCategoryFilter("all")}
               >
-                <Text style={styles.filterChipText}>ALL</Text>
+                <Text style={[styles.filterChipText, menuCategoryFilter === "all" && styles.filterChipTextActive]}>ALL</Text>
               </TouchableOpacity>
               {menuCategories.map((cat) => (
                 <TouchableOpacity
@@ -100,7 +100,7 @@ export default function HomeScreen({
                   ]}
                   onPress={() => setMenuCategoryFilter(cat)}
                 >
-                  <Text style={styles.filterChipText}>{String(cat).toUpperCase()}</Text>
+                  <Text style={[styles.filterChipText, menuCategoryFilter === cat && styles.filterChipTextActive]}>{String(cat).toUpperCase()}</Text>
                 </TouchableOpacity>
               ))}
             </ScrollView>

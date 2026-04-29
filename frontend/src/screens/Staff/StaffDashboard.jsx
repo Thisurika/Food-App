@@ -25,7 +25,7 @@ export default function StaffDashboard({
   return (
     <ScrollView contentContainerStyle={[styles.staffContainer, styles.bottomNavSpace]}>
       <View style={styles.staffHeader}>
-        <Text style={styles.brand}>THE GOLDEN FORK</Text>
+        <Text style={styles.brand}>GOFOOD</Text>
         <TouchableOpacity onPress={handleLogout}>
           <Text style={styles.link}>Logout</Text>
         </TouchableOpacity>

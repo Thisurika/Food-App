@@ -62,7 +62,7 @@ export default function AuthScreen({
         >
           <View style={styles.backgroundOverlay} />
           <ScrollView contentContainerStyle={styles.authContainer}>
-            <Text style={styles.brand}>THE GOLDEN FORK</Text>
+            <Text style={styles.brand}>GOFOOD</Text>
             <Text style={styles.heroTitle}>Restaurant Mobile</Text>
             <Text style={styles.heroSubtitle}>{authTitle}</Text>
             {authMode === "login" && loginScope === "admin" ? (
