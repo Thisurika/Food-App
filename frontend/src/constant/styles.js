@@ -2391,6 +2391,30 @@ const createStyles = (theme) => StyleSheet.create({
     color: "#0A0A0A",
     fontWeight: "700",
     fontSize: 12
+  },
+  deliveryInfoBlock: {
+    marginTop: 12,
+    padding: 10,
+    backgroundColor: "rgba(0,0,0,0.03)",
+    borderRadius: 8,
+    gap: 6
+  },
+  deliveryInfoRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8
+  },
+  deliveryInfoText: {
+    fontSize: 12,
+    color: "#64748B",
+    fontWeight: "500"
+  },
+  deliveryInfoTextDark: {
+    color: "#A0ADB8"
+  },
+  statusBadgeText: {
+    fontSize: 11,
+    fontWeight: "700"
   }
 });
 

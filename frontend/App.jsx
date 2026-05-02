@@ -23,6 +23,8 @@ import AdminManageTables from "./src/screens/Admin/AdminManageTables";
 import AdminManageOrders from "./src/screens/Admin/AdminManageOrders";
 import AdminManageReviews from "./src/screens/Admin/AdminManageReviews";
 import AdminManagePayments from "./src/screens/Admin/AdminManagePayments";
+import AdminManageDeliveries from "./src/screens/Admin/AdminManageDeliveries";
+import WelcomeScreen from "./src/screens/WelcomeScreen";
 
 import { apiFetch } from "./src/script/api/client";
 import { API_BASE_URL } from "./src/constant/config";
@@ -31,6 +33,7 @@ import { lightTheme, darkTheme, createStyles } from "./src/constant/styles";
 
 export default function App() {
   const [initializing, setInitializing] = useState(true);
+  const [showWelcome, setShowWelcome] = useState(true);
   const [token, setToken] = useState(null);
   const [role, setRole] = useState("customer");
   const [roleReady, setRoleReady] = useState(false);
@@ -177,6 +180,9 @@ export default function App() {
   const [adminOrdersMsg, setAdminOrdersMsg] = useState("");
   const [adminTableReservations, setAdminTableReservations] = useState([]);
   const [adminTableReservationsBusy, setAdminTableReservationsBusy] = useState(false);
+  const [adminDeliveries, setAdminDeliveries] = useState([]);
+  const [adminDeliveriesBusy, setAdminDeliveriesBusy] = useState(false);
+  const [adminDeliveriesMsg, setAdminDeliveriesMsg] = useState("");
   const [appTheme, setAppTheme] = useState("light");
   const [adminPaymentOptions, setAdminPaymentOptions] = useState({
     cash: true,
@@ -386,8 +392,8 @@ export default function App() {
   const isAdminRole = role === "admin";
   const isStaffRole = ["manager", "cashier", "staff"].includes(role);
   const roleLabel = isAdminRole ? "Admin" : isStaffRole ? "Staff" : "Customer";
-  const isDark = appTheme === "dark";
   const isAdminDark = isDark;
+  const isDark = appTheme === "dark";
   const theme = useMemo(() => (isDark ? darkTheme : lightTheme), [isDark]);
   const styles = useMemo(() => createStyles(theme), [theme]);
   const authTitle =
@@ -1814,6 +1820,61 @@ export default function App() {
     }
   };
 
+  const loadAdminDeliveries = async () => {
+    if (!token) return;
+    setAdminDeliveriesBusy(true);
+    setAdminDeliveriesMsg("");
+    try {
+      const response = await apiFetch("/deliveries", { token });
+      setAdminDeliveries(response?.deliveries || []);
+    } catch (err) {
+      setAdminDeliveriesMsg(err.message || "Failed to load deliveries.");
+    } finally {
+      setAdminDeliveriesBusy(false);
+    }
+  };
+
+  const createAdminDelivery = async (orderId, data = {}) => {
+    if (!token) return;
+    try {
+      await apiFetch("/deliveries", {
+        method: "POST",
+        token,
+        body: { orderId, ...data }
+      });
+      loadAdminDeliveries();
+      setInfo("Delivery created successfully.");
+      setTimeout(() => setInfo(""), 3000);
+    } catch (err) {
+      setError(err.message || "Failed to create delivery.");
+      setTimeout(() => setError(""), 3000);
+    }
+  };
+
+  const updateAdminDelivery = async (deliveryId, data) => {
+    if (!token) return;
+    try {
+      await apiFetch(`/deliveries/${deliveryId}`, {
+        method: "PATCH",
+        token,
+        body: data
+      });
+      loadAdminDeliveries();
+    } catch (err) {
+      setAdminDeliveriesMsg(err.message || "Failed to update delivery.");
+    }
+  };
+
+  const deleteAdminDelivery = async (deliveryId) => {
+    if (!token) return;
+    try {
+      await apiFetch(`/deliveries/${deliveryId}`, { method: "DELETE", token });
+      loadAdminDeliveries();
+    } catch (err) {
+      setAdminDeliveriesMsg(err.message || "Failed to delete delivery.");
+    }
+  };
+
   const handleSaveProfile = async () => {
     if (!token) return;
     setProfileSaveBusy(true);
@@ -2001,6 +2062,7 @@ export default function App() {
       loadAdminDishes();
       loadAdminReviews();
       loadAdminUsers();
+      loadAdminDeliveries();
     } else if (isStaffRole) {
       loadStaffOrders();
     } else {
@@ -2078,6 +2140,10 @@ export default function App() {
         </SafeAreaView>
       </SafeAreaProvider>
     );
+  }
+
+  if (showWelcome && !token) {
+    return <WelcomeScreen onExplore={() => setShowWelcome(false)} />;
   }
 
   if (!token) {
@@ -3367,6 +3433,7 @@ export default function App() {
                   {[
                     { label: "Tables", icon: "grid", tab: "tables", color: theme.accent },
                     { label: "Orders", icon: "receipt", tab: "orders", color: theme.accent },
+                    { label: "Delivery", icon: "car", tab: "delivery", color: theme.accent },
                     { label: "Payments", icon: "card", tab: "payments", color: theme.accent },
                     { label: "Dishes", icon: "restaurant", tab: "dishes", color: theme.accent },
                     { label: "Users", icon: "people", tab: "users", color: theme.accent },
@@ -3647,6 +3714,20 @@ export default function App() {
               />
             ) : null}
 
+            {adminTab === "delivery" ? (
+              <AdminManageDeliveries
+                adminDeliveries={adminDeliveries}
+                adminDeliveriesBusy={adminDeliveriesBusy}
+                adminDeliveriesMsg={adminDeliveriesMsg}
+                loadAdminDeliveries={loadAdminDeliveries}
+                updateAdminDelivery={updateAdminDelivery}
+                deleteAdminDelivery={deleteAdminDelivery}
+                formatDateTime={formatDateTime}
+                styles={styles}
+                isAdminDark={isAdminDark}
+              />
+            ) : null}
+
             {adminTab === "orders" ? (
               <AdminManageOrders
                 adminOrders={adminOrders}
@@ -3664,6 +3745,7 @@ export default function App() {
                 markAdminOrderPaid={markAdminOrderPaid}
                 cancelAdminOrder={cancelAdminOrder}
                 setOrderModalVisible={setOrderModalVisible}
+                createAdminDelivery={createAdminDelivery}
                 formatOrderType={formatOrderType}
                 formatReservationRange={formatReservationRange}
                 resolveTableLocation={resolveTableLocation}
@@ -3679,6 +3761,7 @@ export default function App() {
                   { key: "dashboard", label: "Home", icon: "speedometer-outline", activeIcon: "speedometer" },
                   { key: "tables", label: "Tables", icon: "grid-outline", activeIcon: "grid" },
                   { key: "orders", label: "Orders", icon: "receipt-outline", activeIcon: "receipt" },
+                  { key: "delivery", label: "Delivery", icon: "car-outline", activeIcon: "car" },
                   { key: "payments", label: "Pay", icon: "card-outline", activeIcon: "card" },
                   { key: "dishes", label: "Dishes", icon: "restaurant-outline", activeIcon: "restaurant" },
                   { key: "users", label: "Users", icon: "people-outline", activeIcon: "people" },
