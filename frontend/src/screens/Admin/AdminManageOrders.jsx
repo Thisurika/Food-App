@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
 export default function AdminManageOrders({
@@ -17,6 +17,7 @@ export default function AdminManageOrders({
   markAdminOrderPaid,
   cancelAdminOrder,
   setOrderModalVisible,
+  createAdminDelivery,
   formatOrderType,
   formatReservationRange,
   resolveTableLocation,
@@ -210,6 +211,16 @@ export default function AdminManageOrders({
                     Mark Paid
                   </Text>
                 </TouchableOpacity>
+                {isDelivery && order.status !== "Cancelled" ? (
+                  <TouchableOpacity
+                    style={[styles.adminActionButton, { backgroundColor: "#0B5D49" }]}
+                    onPress={() => createAdminDelivery(order._id)}
+                  >
+                    <Text style={[styles.adminActionText, { color: "#FFFFFF" }]}>
+                      Create Delivery
+                    </Text>
+                  </TouchableOpacity>
+                ) : null}
                 <TouchableOpacity
                   style={[styles.adminDangerButton, isAdminDark && styles.adminDangerButtonDark]}
                   onPress={() => cancelAdminOrder(order._id)}

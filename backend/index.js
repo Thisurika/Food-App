@@ -15,6 +15,7 @@ import tableReservationRoutes from "./routes/tableReservationRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import dishRoutes from "./routes/dishRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
+import deliveryRoutes from "./routes/deliveryRoutes.js";
 
 const app = express();
 
@@ -96,6 +97,7 @@ app.use(tableReservationRoutes);
 app.use(dishRoutes);
 app.use(reviewRoutes);
 app.use(adminRoutes);
+app.use(deliveryRoutes);
 
 // 404 handler
 app.use((req, res) => {
