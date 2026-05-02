@@ -386,8 +386,8 @@ export default function App() {
   const isAdminRole = role === "admin";
   const isStaffRole = ["manager", "cashier", "staff"].includes(role);
   const roleLabel = isAdminRole ? "Admin" : isStaffRole ? "Staff" : "Customer";
-  const isAdminDark = isDark;
   const isDark = appTheme === "dark";
+  const isAdminDark = isDark;
   const theme = useMemo(() => (isDark ? darkTheme : lightTheme), [isDark]);
   const styles = useMemo(() => createStyles(theme), [theme]);
   const authTitle =
